@@ -1,0 +1,43 @@
+name: Monitor de Passagens
+
+on:
+  schedule:
+    # Roda sozinho 2 vezes por dia (às 06:00 e às 18:00 no horário de Brasília)
+    - cron: '0 9,21 * * *'
+  workflow_dispatch: # Cria um botão manual para você rodar quando quiser!
+
+permissions:
+  contents: write # Permite que o robô anote no historico.txt os voos que já te avisou
+
+jobs:
+  buscar-voos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Abrir a pasta do robô
+        uses: actions/checkout@v4
+
+      - name: Ligar o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar o navegador invisível (Playwright)
+        run: |
+          pip install playwright requests
+          playwright install --with-deps chromium
+
+      - name: Executar a busca de passagens
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python robo_voos.py
+
+      - name: Salvar histórico para não repetir alertas
+        run: |
+          if [ -f historico.txt ]; then
+            git config user.name "Robô de Voos"
+            git config user.email "robo@github.com"
+            git add historico.txt
+            git diff --staged --quiet || git commit -m "Atualiza histórico de alertas enviados"
+            git push
+          fi
