@@ -2,8 +2,8 @@ name: Monitor de Passagens
 
 on:
   schedule:
-    # Roda sozinho 2 vezes por dia (às 06:00 e às 18:00 no horário de Brasília)
-    - cron: '0 9,21 * * *'
+    # Roda sozinho 7 vezes por dia (a partir das 08:00, a cada 2 horas até às 20:00 no horário de Brasília)
+    - cron: '0 11,13,15,17,19,21,23 * * *'
   workflow_dispatch: # Cria um botão manual para você rodar quando quiser!
 
 permissions:
