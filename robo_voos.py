@@ -20,8 +20,8 @@ MINHAS_BUSCAS = [
         "preco_maximo": 1200,              # Seu limite real de preço (R$)
         "aceita_escalas": True,            # True = aceita conexões | False = só direto
         "sem_troca_aeroporto": True,       # True = proíbe mudar de aeroporto na conexão
-        "passo_dias_ida": 1,               # Testa datas de ida de 2 em 2 dias
-        "passo_dias_duracao": 1            # Testa durações de 2 em 2 dias (7, 9, 11, 13, 15)
+        "passo_dias_ida": 2,               # Testa datas de ida de 2 em 2 dias
+        "passo_dias_duracao": 2            # Testa durações de 2 em 2 dias (7, 9, 11, 13, 15)
     },
     {
         "origem": "SDU",                   # Viagem 2 (Opcional): Outra rota que queira vigiar
@@ -33,8 +33,8 @@ MINHAS_BUSCAS = [
         "preco_maximo": 1200,
         "aceita_escalas": True,
         "sem_troca_aeroporto": True,
-        "passo_dias_ida": 1,
-        "passo_dias_duracao": 1
+        "passo_dias_ida": 2,
+        "passo_dias_duracao": 2
     }
 ]
 
