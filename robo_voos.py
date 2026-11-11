@@ -1,6 +1,7 @@
 import os
 import re
 import time
+import random
 import urllib.parse
 import requests
 from datetime import datetime, timedelta
@@ -97,14 +98,16 @@ def analisar_voos_na_pagina(page, origem, destino, ida, volta, regra):
     url = f"https://www.google.com/travel/flights?q={urllib.parse.quote(consulta)}&curr=BRL&hl=pt-BR"
 
     page.goto(url, wait_until="domcontentloaded", timeout=60000)
-    time.sleep(4)
+
+    # Pausa aleatória entre 3 e 6 segundos para carregar a página imitando um humano
+    time.sleep(random.uniform(3, 6))
 
     # Se aparecer tela de cookies do Google na primeira abertura, clica em aceitar
     for texto_botao in ["Aceitar tudo", "Accept all", "Concordo"]:
         botao = page.locator(f"button:has-text('{texto_botao}')")
         if botao.count() > 0:
             botao.first.click()
-            time.sleep(2)
+            time.sleep(random.uniform(1.5, 3))
             break
 
     # Lê os cartões de resultados de voos na página
@@ -138,7 +141,6 @@ def analisar_voos_na_pagina(page, origem, destino, ida, volta, regra):
             continue
 
         # FILTRO 5: Sem troca de aeroporto na conexão
-        # O Google Flights avisa "Troca de aeroporto" / "Change of airport" no cartão quando há mudança
         trocou_aeroporto = (
             "troca de aeroporto" in texto_minusculo
             or "change of airport" in texto_minusculo
@@ -204,6 +206,9 @@ def main():
                         print(f"Alerta enviado: {chave}")
                 except Exception as erro:
                     print(f"Erro ao checar {ida} a {volta}: {erro}")
+
+                # Pausa extra aleatória entre 2 e 4 segundos antes de pesquisar a próxima data
+                time.sleep(random.uniform(2, 4))
 
         navegador.close()
 
