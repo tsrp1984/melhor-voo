@@ -17,10 +17,10 @@ MINHAS_BUSCAS = [
         "data_fim": "2027-01-31",          # Fim do período disponível
         "dias_min": 7,                     # Mínimo de 7 dias
         "dias_max": 12,                    # Máximo de 15 dias
-        "preco_maximo": 1150,              # Seu limite real de preço (R$)
+        "preco_maximo": 1200,              # Seu limite real de preço (R$)
         "aceita_escalas": True,            # True = aceita conexões | False = só direto
         "sem_troca_aeroporto": True,       # True = proíbe mudar de aeroporto na conexão
-        "passo_dias_ida": 2,               # Testa datas de ida de 2 em 2 dias
+        "passo_dias_ida": 1,               # Testa datas de ida de 2 em 2 dias
         "passo_dias_duracao": 1            # Testa durações de 2 em 2 dias (7, 9, 11, 13, 15)
     },
     {
@@ -30,10 +30,10 @@ MINHAS_BUSCAS = [
         "data_fim": "2027-01-31",
         "dias_min": 7,
         "dias_max": 12,
-        "preco_maximo": 1150,
+        "preco_maximo": 1200,
         "aceita_escalas": True,
         "sem_troca_aeroporto": True,
-        "passo_dias_ida": 2,
+        "passo_dias_ida": 1,
         "passo_dias_duracao": 1
     }
 ]
