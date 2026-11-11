@@ -12,7 +12,7 @@ from playwright.sync_api import sync_playwright
 MINHAS_BUSCAS = [
     {
         "origem": "GIG",                   # Sigla de 3 letras do aeroporto de saída
-        "destino": "SDU",                  # Sigla de 3 letras do aeroporto de chegada
+        "destino": "THE",                  # Sigla de 3 letras do aeroporto de chegada
         "data_inicio": "2027-12-12",       # Início do período disponível (Ano-Mês-Dia)
         "data_fim": "2027-01-31",          # Fim do período disponível (Ano-Mês-Dia)
         "dias_min": 7,                     # Mínimo de dias de viagem
