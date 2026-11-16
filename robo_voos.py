@@ -13,29 +13,29 @@ from playwright.sync_api import sync_playwright
 MINHAS_BUSCAS = [
     {
         "origem": "GIG",                   # Viagem 1: Saída
-        "destino": "THE",                  # Viagem 1: Chegada
-        "data_inicio": "2026-12-12",       # Início do período disponível
-        "data_fim": "2027-01-31",          # Fim do período disponível
-        "dias_min": 7,                     # Mínimo de 7 dias
-        "dias_max": 12,                    # Máximo de 15 dias
-        "preco_maximo": 1200,              # Seu limite real de preço (R$)
+        "destino": "CGH",                  # Viagem 1: Chegada
+        "data_inicio": "2027-03-01",       # Início do período disponível
+        "data_fim": "2027-03-31",          # Fim do período disponível
+        "dias_min": 3,                     # Mínimo de 7 dias
+        "dias_max": 7,                    # Máximo de 15 dias
+        "preco_maximo": 400,              # Seu limite real de preço (R$)
         "aceita_escalas": True,            # True = aceita conexões | False = só direto
         "sem_troca_aeroporto": True,       # True = proíbe mudar de aeroporto na conexão
-        "passo_dias_ida": 2,               # Testa datas de ida de 2 em 2 dias
-        "passo_dias_duracao": 2            # Testa durações de 2 em 2 dias (7, 9, 11, 13, 15)
+        "passo_dias_ida": 1,               # Testa datas de ida de 2 em 2 dias
+        "passo_dias_duracao": 1            # Testa durações de 2 em 2 dias (7, 9, 11, 13, 15)
     },
     {
         "origem": "SDU",                   # Viagem 2 (Opcional): Outra rota que queira vigiar
-        "destino": "THE",
-        "data_inicio": "2026-12-12",
-        "data_fim": "2027-01-31",
-        "dias_min": 7,
-        "dias_max": 12,
-        "preco_maximo": 1200,
+        "destino": "CGH",
+        "data_inicio": "2027-03-01",
+        "data_fim": "2027-03-31",
+        "dias_min": 3,
+        "dias_max": 7,
+        "preco_maximo": 400,
         "aceita_escalas": True,
         "sem_troca_aeroporto": True,
-        "passo_dias_ida": 2,
-        "passo_dias_duracao": 2
+        "passo_dias_ida": 1,
+        "passo_dias_duracao": 1
     }
 ]
 
