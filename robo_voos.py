@@ -13,12 +13,12 @@ from playwright.sync_api import sync_playwright
 MINHAS_BUSCAS = [
     {
         "origem": "GIG",                   # Viagem 1: Saída
-        "destino": "CGH",                  # Viagem 1: Chegada
+        "destino": "THE",                  # Viagem 1: Chegada
         "data_inicio": "2027-03-01",       # Início do período disponível
         "data_fim": "2027-03-31",          # Fim do período disponível
-        "dias_min": 3,                     # Mínimo de 7 dias
-        "dias_max": 7,                    # Máximo de 15 dias
-        "preco_maximo": 400,              # Seu limite real de preço (R$)
+        "dias_min": 8,                     # Mínimo de 7 dias
+        "dias_max": 11,                    # Máximo de 15 dias
+        "preco_maximo": 1000,              # Seu limite real de preço (R$)
         "aceita_escalas": True,            # True = aceita conexões | False = só direto
         "sem_troca_aeroporto": True,       # True = proíbe mudar de aeroporto na conexão
         "passo_dias_ida": 2,               # Testa datas de ida de 2 em 2 dias
